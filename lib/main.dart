@@ -1,8 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:moonfolk/core/theme/theme_controller.dart';
+import 'package:moonfolk/modules/home/page/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,204 +17,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Moonfolk Magic: The Gathering Counsel',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.light(
+          primary: ThemeController().color.blue,
+          secondary: ThemeController().color.purple,
+        ),
         fontFamily: GoogleFonts.kanit().fontFamily,
-      ),
-      home: const GameWidget(),
-    );
-  }
-}
-
-class GameWidget extends StatelessWidget {
-  const GameWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          children: [
-            Expanded(
-              flex: 8,
-              child: Transform.rotate(
-                angle: math.pi,
-                child: Container(
-                  color: Colors.white,
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: FittedBox(
-                              child: Text(
-                                'Player 1'.toUpperCase(),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: FittedBox(
-                              fit: BoxFit.contain,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  IconButton(
-                                    icon: const Icon(FontAwesomeIcons.minus),
-                                    onPressed: () {},
-                                  ),
-                                  Text(
-                                    '20',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineMedium,
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(FontAwesomeIcons.plus),
-                                    onPressed: () {},
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: FittedBox(
-                              child: Row(
-                                children: [
-                                  IconButton(
-                                    icon: const Icon(FontAwesomeIcons.droplet),
-                                    onPressed: () {},
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(FontAwesomeIcons.shield),
-                                    onPressed: () {},
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(FontAwesomeIcons.crown),
-                                    onPressed: () {},
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: const MaterialStatePropertyAll(
+              Colors.white,
             ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                width: double.infinity,
-                color: Colors.grey,
-                child: FittedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: IconButton(
-                          iconSize: 48,
-                          icon: const Icon(FontAwesomeIcons.diceD20),
-                          onPressed: () {},
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: IconButton(
-                          iconSize: 48,
-                          icon: const Icon(FontAwesomeIcons.gear),
-                          onPressed: () {},
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: IconButton(
-                          iconSize: 48,
-                          icon: const Icon(FontAwesomeIcons.users),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            foregroundColor: MaterialStatePropertyAll(
+              ThemeController().color.purple,
             ),
-            Expanded(
-              flex: 8,
-              child: Container(
-                color: Colors.white,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: FittedBox(
-                            child: Text(
-                              'Player 2'.toUpperCase(),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: FittedBox(
-                            fit: BoxFit.contain,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                IconButton(
-                                  icon: const Icon(FontAwesomeIcons.minus),
-                                  onPressed: () {},
-                                ),
-                                Text(
-                                  '20',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineMedium,
-                                ),
-                                IconButton(
-                                  icon: const Icon(FontAwesomeIcons.plus),
-                                  onPressed: () {},
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: FittedBox(
-                            child: Row(
-                              children: [
-                                IconButton(
-                                  icon: const Icon(FontAwesomeIcons.droplet),
-                                  onPressed: () {},
-                                ),
-                                IconButton(
-                                  icon: const Icon(FontAwesomeIcons.shield),
-                                  onPressed: () {},
-                                ),
-                                IconButton(
-                                  icon: const Icon(FontAwesomeIcons.crown),
-                                  onPressed: () {},
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
+      home: const HomePage(),
     );
   }
 }
