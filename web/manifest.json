@@ -1,11 +1,11 @@
 {
-    "name": "moonfolk",
-    "short_name": "moonfolk",
+    "name": "Moonfolk Magic: The Gathering Counsel",
+    "short_name": "Moonfolk",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Moonfolk is a Magic: The Gathering counsel application.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
