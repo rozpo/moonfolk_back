@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,14 +17,15 @@ class MyApp extends StatelessWidget {
       title: 'Moonfolk Magic: The Gathering Counsel',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: GoogleFonts.kanit().fontFamily,
       ),
-      home: const LifeCounterWidget(),
+      home: const GameWidget(),
     );
   }
 }
 
-class LifeCounterWidget extends StatelessWidget {
-  const LifeCounterWidget({super.key});
+class GameWidget extends StatelessWidget {
+  const GameWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
