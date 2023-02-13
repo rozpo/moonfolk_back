@@ -119,10 +119,27 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     IconButton(
-                        onPressed: () => setState(() {
-                              health++;
-                            }),
-                        icon: const Icon(FontAwesomeIcons.plus)),
+                      onPressed: () => setState(() {
+                        health++;
+                      }),
+                      icon: const Icon(FontAwesomeIcons.plus),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: const [
+                    IconButton(
+                      onPressed: null,
+                      icon: Icon(FontAwesomeIcons.droplet),
+                    ),
+                    IconButton(
+                      onPressed: null,
+                      icon: Icon(FontAwesomeIcons.shield),
+                    ),
+                    IconButton(
+                      onPressed: null,
+                      icon: Icon(FontAwesomeIcons.crown),
+                    ),
                   ],
                 ),
               ],
