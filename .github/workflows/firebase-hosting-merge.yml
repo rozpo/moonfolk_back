@@ -17,3 +17,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MOONFOLK_MTG }}'
           channelId: live
           projectId: moonfolk-mtg
+          target: moonfolk
